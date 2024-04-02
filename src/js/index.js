@@ -22,6 +22,11 @@ const abas = document.querySelectorAll(".aba");
 abas.forEach(aba => {
     // passo 2 - dar um jeito de identificar o clique no elemento da aba
     aba.addEventListener("click", function(){
+
+        if(aba.classList.contains("selecionado")) {
+            return;
+        }
+
         // passo 3 - quando o usuário clicar, desmarcar a aba selecionada
         const abaSelecionada = document.querySelector(".aba.selecionado");
         abaSelecionada.classList.remove("selecionado")
@@ -30,6 +35,14 @@ abas.forEach(aba => {
         aba.classList.add("selecionado")
 
         // passo 5 - esconder o conteúdo anterior
+        const informacaoSelecioada = document.querySelector(".informacao.selecionado");
+        informacaoSelecioada.classList.remove("selecionado")
+
+        // passo 6 - mostrar o conteúdo da aba selecionado
+        const idDoElementoDeInformacoesDaAba = `informacao-${aba.id}`
+
+        const informacaoASerMostrada = document.getElementById(idDoElementoDeInformacoesDaAba)
+        informacaoASerMostrada.classList.add("selecionado")
     });
 });
 
