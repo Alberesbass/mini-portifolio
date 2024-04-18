@@ -135,6 +135,10 @@ body {
   background-color: #545454;
 }
 
+.redes-sociais .portfolio {
+  background-color: #bd1d1d;
+}
+
 .redes-sociais li a:hover {
   opacity: 0.8;
 }
